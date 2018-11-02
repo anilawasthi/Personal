@@ -1,0 +1,85 @@
+try 
+{
+Statements which may cause and exception
+}
+
+catch ()
+{ 
+code to recover from exception
+}
+
+Exceptions means recoverable errors
+Error means non recoverable errors
+
+Recoverable Exceptions
+	Unchecked Exceptions (Avoidable) - Complier will not warn us about such exceptions
+	Checked Exceptions (Unavoidable) - Complier will Warn us about such exceptions
+
+Non Recoverable Exceptions
+
+
+All the below 3 are in throwable class
+catch
+throw
+throws
+
+Exceptions are thrown by JVM or User Defined Exceptions
+
+If app is able to catch the exception thrown bt JVM then it will allow our application to run else it will not allow applicationto run
+
+e.g below
+A
+try{
+B
+C
+}catch(...)
+{
+D
+}
+E
+
+1. When NO Exception occurs
+A->B->C->E
+
+2. When Exception occurs at B
+A->B->D->E
+
+3. When Exception occurs at B which cannot be handled by Catch 
+A->B-> application will end after B
+
+
+if you are writing an application to connect with API or DB or IO operation we must used checked Exception
+if you are building an application for internal validation like Interest Duration Balance we must use Unchecked expections
+
+1. Three User defined exceptions
+InvalidPrincipalException -> Exception
+private static final double MIN_PRINCIPAL = 10000;
+private static final double MAX_PRINCIPAL = 10000000;
+	InvalidPrincipalException()
+	{
+	super ("Invalid")
+	}
+	InvalidRate
+	\
+	InvalidDuration
+	
+	p = invalidprincipal.meanvalue
+	
+Benefit of User defined exceptions
+- We can customize exceptions and also 
+
+
+List- In list elements can be inserted anywhere - allows duplication
+Queus - Elements can only be insrted at the beginning or end - follows method of First in first out - allows duplication
+Set - doesnt allow duplicate
+
+Collection interface contains all abstrack methods
+
+for fetching one value at a time Maps are the best
+e.g hashmap etc
+
+
+Comparator 
+if first value is bigger than the 2nd the result displayed will be 1
+if 2nd value is bigger than the 1st the result displayed will be -1
+if both first value and 2nd value are equal than the result displayed will be 0
