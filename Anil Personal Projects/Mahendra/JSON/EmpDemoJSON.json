@@ -1,0 +1,32 @@
+[
+    {
+        "empId": "101",
+        "Name":
+        {
+            "First Name": "Anil",
+            "Last Name": "Awasthi"
+        },
+        "address": 
+        {
+            "line1":"Jankalyan Nagar",
+            "line2":"Malad",
+            "city":"Mumbai",
+            "postalcode":"400095"
+        },
+        "empId": "102",
+        "Name":
+        {
+            "First Name": "Mahendra",
+            "Last Name": "Shinde"
+        },
+        "address": 
+        {
+            "line1":"Koparkhairane",
+            "line2":"Vashi",
+            "city":"Navi Mumbai",
+            "postalcode":"400001"
+        }
+        
+    }
+
+]

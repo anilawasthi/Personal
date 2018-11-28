@@ -1,0 +1,20 @@
+{
+        "CountryName": "India",
+        "cities": [
+    {    "name":"Mumbai",
+        "Population": "4C" 
+    },
+    {
+        "cities": "Banglore",
+        "Population": "2C" 
+    },
+    {
+        "cities": "Chennai",
+        "Population": "45L" 
+    },
+    {
+        "cities": "Kolkatta",
+        "Population": "45C" 
+    }
+   ]
+}

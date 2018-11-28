@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Animation_Demo</title>
+        <script src="scripts/jquery-1.4.4.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+        $(document).ready(function(){
+        $("#but1").click(function(){
+            $("#heading").show();
+        });
+        $("#but2").click(function(){
+            $("#heading").hide();
+        });
+        $("#but3").click(function(){
+            $("#heading").toggle();
+        });
+        $("#but4").click(function(){
+            $("#heading").slideUp();
+        });
+        $("#but5").click(function(){
+            $("#heading").slideDown();
+        });
+        $("#but6").click(function(){
+            $("#heading").slideToggle();
+        });
+        $("#but7").click(function(){
+            $("#heading").fadeIn();
+        });
+        $("#but8").click(function(){
+            $("#heading").fadeOut();
+        });
+        $("#but9").click(function(){
+            $("#heading").fadeToggle();
+        });
+        $("#but10").click(function(){
+            $("#heading").animate({width: "-=5000px"},5000)
+        });
+    });
+        </script>
+    </head>
+    <body>
+        <h1 id="heading" style="text-align:center">Heading with JQUERY effects</h1>
+        <p><h2 style="text-align:center">Click buttons to see the effects</h2></p>
+        <button type="button" id="but1">Show</button>
+        <button type="button" id="but2">Hide</button>
+        <button type="button" id="but3">Toggle Show/Hide</button> <br><br>
+        <button type="button" id="but4">Slide Up</button> 
+        <button type="button" id="but5">Slide Down</button>
+        <button type="button" id="but6">Slide Toggle</button> <br><br>
+        <button type="button" id="but7">Fade In</button>
+        <button type="button" id="but8">Fade Out</button>
+        <button type="button" id="but9">Fade Toggle</button> <br><br>
+        <button type="button" id="but10">Animate</button>
+    </body>
+
+</html>
+
+
+

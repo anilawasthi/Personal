@@ -1,0 +1,21 @@
+<html>
+   <head>
+      <title>Confirm Demo</title>
+   </head>
+            <body>
+               <script type="text/javascript">
+	function callConfirm()
+	{
+		var a=confirm("Press a Button");
+		if(a==true)
+		{
+			document.write("You pressed OK")
+		} else
+		{
+			document.write("You pressed Cancel!!")
+		}
+	}
+               </script>
+	       <input type="button" value="Display a confirm box" onclick="callConfirm()"/>
+            </body>
+</html>

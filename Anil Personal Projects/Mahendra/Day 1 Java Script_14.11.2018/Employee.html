@@ -1,0 +1,164 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+
+    <title>Employee Demo</title>
+
+
+    <script type="text/javascript">
+        function selectDomain() {
+            //alert("Hi");
+
+            var a = document.getElementById("domain").value;
+            //alert(a);
+            switch (a) {
+                case "jee":
+                    //alert("in jee");
+                    document.getElementById("module").options[0] = new Option("Select", "");
+                    document.getElementById("module").options[1] = new Option("Core java", "CJ");
+                    document.getElementById("module").options[2] = new Option("Servlet JSP", "SJ");
+                    document.getElementById("module").options[3] = new Option("Spring", "SP");
+                    break;
+                case ".net":
+                    document.getElementById("module").options[0] = new Option("Select", "");
+                    document.getElementById("module").options[1] = new Option("C#", "CS");
+                    document.getElementById("module").options[2] = new Option("ASP.NET", "AN");
+                    document.getElementById("module").options[3] = new Option("ADP.NET", "AD");
+                    break;
+            }
+
+
+
+        }
+
+        function validate()
+
+        // var x = document.forms["myForm"]["fname"].value;
+        // if (x == "") {
+        //     alert("Name must be filled out");
+        //     return false;
+        // }
+        // }
+
+        {
+            var empNumber = document.getElementById
+            var b = document.getElementById("domain").value
+            if (b == "sd") {
+                alert("Please select domain");
+            }
+            else {
+                var blnDomainResult = true;
+            }
+
+            var c = document.getElementById("module").value
+            if (c == "sm") {
+                alert("Please select module");
+            }
+            else {
+                var blnModuleResult = true;
+            }
+
+            if ((blnModuleResult == true) || (blnDomainResult == true)) {
+                // calculating 
+                var mptMarks = parseInt(document.getElementById("MPT").value);
+                var mttMarks = parseInt(document.getElementById("MTT").value);
+                var assgmrks = parseInt(document.getElementById("assgmrks").value);
+                var totalMarks = (mptMarks * 0.15) + (mttMarks * 0.15) + (assgmrks * 0.70);
+                alert(totalMarks);
+
+            }
+            else {
+                alert("Please select the missing fields");
+            }
+        }
+    </script>
+    <style>
+        body 
+        {
+            background-color: darkcyan;
+            align-content: center;
+        
+        }
+    #Employee 
+        {
+            padding: 10px;
+            border:7px solid black;
+            border-radius: 25px;
+            margin: auto;    
+            width: 40%;
+            height: 70%;
+        
+        }   
+    
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:ghostwhite;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px 10px;
+    text-decoration: none;
+    display: block; */
+}
+</style>
+
+
+</head>
+
+<body></body>
+<table id="Employee" class="center" style="background-color:gray">
+    <tr>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <td><b>Enter Employee Number</b></td><br>
+        <td><input type="text" id="enum" pattern="[0-9]{6}" required maxlength="6"></td><br>
+    <tr>
+        <td><b>Enter Employee Name</b></td><br>
+        <td><input type="text" id="ename" required maxlength="30"></td><br>
+    </tr>
+    <tr>
+        <td><b>Choose Domain</b></td><br>
+        <td><select id="domain" onchange="selectDomain()">
+                <option value="sd">Select Domain</option>
+                <option value="jee">JEE</option>
+                <option value=".net">.NET</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td><b>Choose Module</b></td><br>
+        <td><select id="module">
+                <option value="sm">Select Module</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td><b>Enter MPT Marks</b></td><br>
+        <td><input type="number" id="MPT" required </td> </tr> <tr>
+        <td><b>Enter MTT Marks</b></td><br>
+        <td><input type="number" id="MTT" required </td> </tr> <tr>
+        <td><b>Enter Assignment Marks</b></td><br>
+        <td><input type="number" id="assgmrks" required </td> </tr> <tr>
+        <td colspan="2">
+            <input type="submit" value="Calculate Module Score" onClick=validate()>
+        </td>
+    </tr>
+</table>
+
+</body>

@@ -1,0 +1,17 @@
+<form #frm="ngForm" (ngSubmit)="addItem(frm)" *ngIf="!toggleForm">
+    <h2>Add Item</h2>
+    <div class="form-group">
+      <label for="">
+        Phone Model:
+      </label>
+      <input type="text" class="form-control" required name="itemnames" value="" ngModel>
+    </div>
+    
+    <div class="form-group">
+        <label for="">  
+          Quantity:
+        </label>
+        <input type="number" class="form-control" required name="itemquantitys" value="" ngModel>
+      </div>
+      <button type="submit" name="button" class="btn btn-success" [disabled]=frm.invalid>Add Item</button>
+    </form>

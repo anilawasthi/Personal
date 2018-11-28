@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Procuct 1",
+        "quantity": 30,
+        "rate": 120.22,
+        "description": "Sample Product 1"
+    },
+    {
+        "name": "Procuct 2",
+        "quantity": 40,
+        "rate": 145.55,
+        "description": "Sample Product 2"
+    },
+    {
+        "name": "Procuct 3",
+        "quantity": 45,
+        "rate": 150.00,
+        "description": "Sample Product 3"
+    },
+    {
+        "name": "Procuct 4",
+        "quantity": 50,
+        "rate": 155.13,
+        "description": "Sample Product 4"
+    },
+    {
+        "name": "Procuct 5",
+        "quantity": 55,
+        "rate": 160.23,
+        "description": "Sample Product 5"
+    },
+    {
+        "name": "Procuct 6",
+        "quantity": 60,
+        "rate": 120.85,
+        "description": "Sample Product 6"
+    },
+    {
+        "name": "Procuct 7",
+        "quantity": 85,
+        "rate": 178.74,
+        "description": "Sample Product 7"
+    },
+    {
+        "name": "Procuct 8",
+        "quantity": 90,
+        "rate": 194.85,
+        "description": "Sample Product 8"
+    },
+    {
+        "name": "Procuct 9",
+        "quantity": 95,
+        "rate": 165.71,
+        "description": "Sample Product 9"
+    },
+    {
+        "name": "Procuct 10",
+        "quantity": 65,
+        "rate": 165.65,
+        "description": "Sample Product 10"
+    }
+]

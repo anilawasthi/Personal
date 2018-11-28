@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Calculator</title>
+        <script type="text/javascript">
+        function addtwoNumbers()
+        {
+            var First_number = parseInt(document.getElementById("num1").value)
+            var Second_number = parseInt(document.getElementById("num2").value)
+            var result = First_number + Second_number;
+            document.getElementById("result").value=result;
+        }
+        </script>
+    </head>
+    <body>
+        Enter First number : <input type = "number" id = "num1"/> 
+        Enter Second number : <input type = "number" id = "num2"/> 
+        <input id = "button" type="button" value="Addition" onclick="addtwoNumbers()"/>
+        Result : <input type = "text" id = "result"/>       
+    </body>
+</html>
+
+
+

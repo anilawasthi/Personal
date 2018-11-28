@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<emp-ist>
+    <emp ID="101">
+    <Name>
+        <firstname>Mahendra</firstname>
+        <lastname>Shinde</lastname>
+    </Name>
+    <address>
+        <line1>Vashi</line1>
+        <line2>Navi Mumbai</line2>
+        <city>Mumbai</city>
+        <postalcode>400001</postalcode>
+    </address>
+    </emp>
+    <empID="102">
+    <Name>
+        <firstname>Shaunak</firstname>
+        <lastname>Seth</lastname>
+    </Name>
+    <address>
+        <line1>Borivali</line1>
+        <line2>Mumbai</line2>
+        <city>Mumbai</city>
+        <postalcode>400002</postalcode>
+    </address>
+    <empID="103">
+    <Name>
+        <firstname>Swati</firstname>
+        <lastname>Palkar</lastname>
+    </Name>
+    <address>
+        <line1>Airoli</line1>
+        <line2>Navi Mumbai</line2>
+        <city>Mumbai</city>
+        <postalcode>400003</postalcode>
+    </address>
+    <empID="104">
+    <Name>
+        <firstname>Amit</firstname>
+        <lastname>Pandey</lastname>
+    </Name>
+    <address>
+        <line1>Vashi</line1>
+        <line2>Navi Mumbai</line2>
+        <city>Mumbai</city>
+        <postalcode>400004</postalcode>
+    </address>
+    <empID="105">
+    <Name>
+        <firstname>Ruby</firstname>
+        <lastname>Chaube</lastname>
+    </Name>
+    <address>
+        <line1>Antop Hill</line1>
+        <line2>Mumbai</line2>
+        <city>Mumbai</city>
+        <postalcode>400005</postalcode>
+    </address>
+</emp-list>

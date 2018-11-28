@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>ArrayDemo</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            var arr = new Array("Akshay","Hritik","Amitabh","Virat","Harbhajan","Shushant");
+            document.write("The length of array is "+arr.length + "<br>");
+            document.write("*************************")
+            var arrjoin=arr.join(",");
+            document.write("<br>")
+            document.write(arrjoin);
+            var arrslice=arr.slice(1,2);
+            document.write("<br>")
+            document.write("*************************")
+            document.write("<br>")
+            document.write(arrslice);
+            var arrcon=arr.concat(arrslice);
+            document.write("<br>")
+            document.write("*************************")
+            document.write("<br>")
+            document.write(arrcon);
+        </script>
+    </body>
+</html>

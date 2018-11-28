@@ -1,0 +1,26 @@
+<!DOCtype <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>InnerHTML_Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script type="text/javascript">
+    function changeText1()
+    {
+        document.getElementById("para1").innerHTML="<b>Message1</b> is getting disaplayed" 
+    }
+    function changeText2()
+    {
+        document.getElementById("para1").innerHTML="<b>Message2</b> is getting disaplayed" 
+    }
+    </script>
+</head>
+<body>
+    <input type="button" value="Message1" onclick="changeText1()"/>
+    <input type="button" value="Message2" onclick="changeText2()"/>
+    <p id="para1"></p>
+    
+</body>
+</html>

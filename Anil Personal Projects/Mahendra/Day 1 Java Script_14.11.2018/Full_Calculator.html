@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Full Calculator</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            
+            function calculate()
+            {
+                var num1= Number(document.getElementById("num1").value);
+                var num2= Number(document.getElementById("num2").value);
+                var ops = document.getElementById("operation").value
+                switch(ops)
+                {
+                    case "Add":
+                    var result = num1+num2;
+                    document.getElementById("result").value=result;
+                    break;
+                    case "Sub":
+                    var result = num1-num2;
+                    document.getElementById("result").value=result;
+                    break;
+                    case "Mul":
+                    var result = num1*num2;
+                    document.getElementById("result").value=result;
+                    break;
+                    case "Div":
+                    if (num2==0)
+                    {
+                        document.getElementById("result").value="Number cannot be divisible by 0";
+                        break;
+                    }
+                    var result = num1/num2;
+                    document.getElementById("result").value=result;
+                    break;
+                }
+                
+            }
+        </script>
+    
+    
+            First number : <input type = "number" id = "num1"/> 
+            Second number : <input type = "number" id = "num2"/> 
+            <select id = "Operation" name = "ops"><br>
+                    <option id="Add">Add</option>
+                    <option id="Sub">Sub</option>
+                    <option id="Mul">Mul</option>
+                    <option id="Div">Div</option>
+            </select>   
+            <input id = "calculate" type="button" value="calculate" onclick="calculate()"/>
+            Result <input type = "text" id = "result"/>    
+    </body>
+</html>
