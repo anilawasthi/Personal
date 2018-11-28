@@ -1,9 +1,0 @@
-Begin
-
-Input Principal, Rate, Time
-
-Get Simple Interest = P*R*T/100
-
-Print Simple Interest
-
-End
