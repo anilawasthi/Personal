@@ -1,0 +1,5 @@
+package com.jp.products.services;
+
+public class ServiceUserImpl {
+
+}

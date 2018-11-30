@@ -1,0 +1,54 @@
+package com.jp;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.*;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request, response);
+	}
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String userName = request.getParameter("txtName");
+		String password = request.getParameter("txtPassword");
+		
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+	
+		try {
+			Class.forName("oracle.jdbc.OracleDriver");
+			Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/ORCL","hr","hr");
+			PreparedStatement pstmt = conn.prepareStatement("Select Count(*) from Employee where FIRST_NAME=? and LAST_NAME=?");
+			pstmt.setString(1, userName);
+			pstmt.setString(2, password);
+			ResultSet res = pstmt.executeQuery();
+			res.next();
+			int count = res.getInt(1);
+			res.close();
+			pstmt.close();
+			conn.close();
+			
+			if (count>0){
+				out.write("Valid User");
+			}
+			else {
+				out.write("Invalid User");
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
+
+}

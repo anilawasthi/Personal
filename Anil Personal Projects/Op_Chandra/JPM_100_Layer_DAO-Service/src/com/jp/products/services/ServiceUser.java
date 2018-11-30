@@ -1,0 +1,11 @@
+package com.jp.products.services;
+
+import java.util.ArrayList;
+
+import com.jp.products.entities.User;
+import com.jp.products.exceptions.UserException;
+
+public interface ServiceUser {
+
+	public ArrayList<User> getUserDetails() throws UserException;
+}

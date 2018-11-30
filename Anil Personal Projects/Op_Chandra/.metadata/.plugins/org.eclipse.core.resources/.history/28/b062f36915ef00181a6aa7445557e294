@@ -1,0 +1,100 @@
+package com.jp;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.*;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request, response);
+	}
+	
+	public static Connection getConnection()throws ClassNotFoundException, SQLException{
+		try 
+		{
+	        Class.forName("oracle.jdbc.OracleDriver");
+	
+	        //Step 2: Create a connection
+	        Connection con = DriverManager.getConnection(
+	                    "jdbc:oracle:thin:@localhost:1521/xe","hr","hr");
+			
+	        public PreparedStatement prepareStatement("select count(*) from employees where first_name=? and last_name=?"); throws SQLException
+	        {
+	        	prepareStatement.setString(first_name, Steven);
+	        	prepareStatement.setString(last_name, King);
+	        	rs.next();
+	        	int count = rs.getInt(1);
+	        }
+        
+		}
+	 } 
+		// Clean-up environment
+	    rs.close();
+	    prepareStatement.close();
+	    con.close();
+	    
+		catch(SQLException se) 
+		{
+	         //Handle errors for JDBC
+	         se.printStackTrace();
+		} 
+		catch(Exception e) 
+		{
+	         //Handle errors for Class.forName
+	         e.printStackTrace();
+		}
+//    return con;
+//    // Set response content type
+//    response.setContentType("text/html");
+//    PrintWriter out = response.getWriter();
+//    String title = "Database Result";
+//    
+//    try {
+//        // Register JDBC driver
+//        Class.forName("com.mysql.jdbc.Driver");
+//
+//        // Open a connection
+//        Connection conn = DriverManager.getConnection(DB_URL, USER, PASS);
+//
+//        // Execute SQL query
+//        Statement stmt = conn.createStatement();
+//        String sql;
+//        sql = "SELECT id, first, last, age FROM Employees";
+//        ResultSet rs = stmt.executeQuery(sql);
+//
+//        // Extract data from result set
+//        while(rs.next()){
+//           //Retrieve by column name
+//           int id  = rs.getInt("id");
+//           int age = rs.getInt("age");
+//           String first = rs.getString("first");
+//           String last = rs.getString("last");
+//    
+//    }
+	
+	
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String userName = request.getParameter("txtName");
+		String password = request.getParameter("txtPassword");
+		
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		
+		if (userName.equals("Admin") && password.equals("Password")){
+			out.write("Valid User");
+		}
+		else {
+			out.write("Invalid User");
+		}
+		
+	}
+
+}

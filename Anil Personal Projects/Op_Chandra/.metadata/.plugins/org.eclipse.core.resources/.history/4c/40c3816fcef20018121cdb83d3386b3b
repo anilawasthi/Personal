@@ -1,0 +1,65 @@
+package com.jp.products.daos;
+
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+
+import com.jp.products.entities.Products;
+import com.jp.products.exceptions.ProductsException;
+
+import sun.rmi.transport.Connection;
+
+public class DaoProductsImpl implements DaoProducts {
+
+	private Connection getConnection()
+			throws ClassNotFoundException, SQLException {
+		String driverName = "oracle.jdbc.OracleDriver";
+		String url = "jdbc:oracle:thin:@localhost:1521/orcl";
+		String username = "hr";
+		String password = "hr";
+		
+		Class.forName(driverName);
+		return DriverManager.getConnection(url, username, password)
+	}
+
+	private void closeConnection(Connection connect) throws SQLException {
+		connect.close();
+	}
+
+	@Override
+	public ArrayList<Products> getproductList() throws ProductsException {
+		ArrayList<Products> productList = new ArrayList<>();
+		Connection connect = null;
+		Statement stmt = null;
+		ResultSet rs = null;
+
+		try {
+			connect = getConnection();
+			stmt = connect.createStatement();
+			rs = stmt.executeQuery("Select PRODUCT_ID,PRODUCT_NAME,PRODUCT_CATEGORY,PRODUCT_PRICE from PRODUCTS");
+			while (rs.next()) {
+				int pId = rs.getInt("PRODUCT_ID");
+				String pNm = rs.getString("PRODUCT_NAME");
+				String pCat = rs.getString("PRODUCT_CATEGORY");
+				float pPrc = rs.getFloat("PRODUCT_PRICE");
+				productList.add(new Products(pId, pNm, pCat, pPrc));
+
+			}
+		} catch (ClassNotFoundException | SQLException e) {
+			throw new ProductsException("Problem in fetching.", e);
+		} finally {
+			try {
+				rs.close();
+				stmt.close();
+				closeConnection(connect);
+			} catch (SQLException e) {
+				throw new ProductsException("Problem in closing resources.", e);
+			}
+		}
+		return productList;
+
+	}
+
+}

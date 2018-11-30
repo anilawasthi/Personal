@@ -1,0 +1,11 @@
+package com.jp.products.daos;
+
+public class DaoLogin {
+
+	public void displayUsers(String f, String s) {
+		String queryString = "Select count(*) from USER_MASTER where USER_NAME=? and PASSWORD=?";
+		ps = con.preparedStatement(queryString);
+		ps
+	}
+
+}

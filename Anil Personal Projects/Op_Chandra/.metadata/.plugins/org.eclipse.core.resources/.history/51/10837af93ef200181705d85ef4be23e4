@@ -1,0 +1,5 @@
+package com.jp.products.entities;
+
+public class Products {
+
+}

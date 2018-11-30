@@ -1,0 +1,9 @@
+package com.jp.products.daos;
+
+import java.util.ArrayList;
+
+import com.jp.products.entities.Products;
+
+public interface DaoProducts {
+	public ArrayList<Products> getproductList() throws PrdException;
+}

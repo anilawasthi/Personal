@@ -1,0 +1,86 @@
+package com.jp.products.servlets;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.jp.products.entities.Products;
+import com.jp.products.exceptions.ProductsException;
+import com.jp.products.services.ServiceProducts;
+import com.jp.products.services.ServiceProductsImpl;
+
+@WebServlet("*.do")
+public class FrontController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	private ServiceProducts services;
+
+	@Override
+    public void init() throws ServletException{
+		services = new ServiceProductsImpl();
+    }
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String command = getCommand(request.getRequestURI());
+		RequestDispatcher dispatch = null;
+		String jspName = null;
+		String preFix = "/WEB-INF/jsps";
+		String postFix = ".jsps";
+		try{
+			switch(command){
+			case "*":
+
+			case "mainMenu": {
+				jspName = "MainMenu";
+				break;
+			}
+			case "productList":{
+				ArrayList<Products> productList = services.getproductList();
+				System.out.println(productList);
+				request.setAttribute("productList", productList);
+				RequestDispatcher dispatch = request.getRequestDispatcher("/WEB-INF/jsps/ProductList.jsp");
+				dispatch.forward(request, response);
+			}
+			case "productDetails": {
+				String idStr = request.getParameter("prodId");
+				int prodId = Integer.parseInt(idStr);
+				Products prd = services.getProdDetails(prodId);
+				request.setAttribute("prdDetails", prd);
+				jspName = "PrdDetails";
+				break;
+			}
+			case "newProduct": {
+				jspName = "newProduct";
+				break;
+			}
+			case "submitProduct": {
+				String prdIdStr = request.getParameter("prodId");
+				String prdName = request.getParameter("prdName");
+				String prdCat = request.getParameter("prdCat");
+				String prdPrc = request.getParameter("prdPrc");
+				Products prod = new Products(prdIdStr, prdName, prdCat, prdPrc);
+
+			}
+			}
+		} catch (ProductsException e) {
+				e.printStackTrace();
+			}
+	}
+
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doGet(request, response);
+	}
+
+	private String getCommand(String uri) {
+		int leftPosi = uri.lastIndexOf("/");
+		int rtPosi = uri.lastIndexOf(".");
+		return uri.substring(leftPosi + 1, rtPosi);
+	}
+
+}

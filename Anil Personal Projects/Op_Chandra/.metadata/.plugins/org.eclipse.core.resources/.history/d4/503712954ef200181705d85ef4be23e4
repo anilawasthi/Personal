@@ -1,0 +1,18 @@
+package com.jp.products.services;
+
+import com.jp.products.daos.DaoProducts;
+import com.jp.products.daos.DaoProductsImpl;
+
+public class ServiceProductsImpl implements ServiceProducts{
+	
+	private DaoProducts daoProd;
+	
+	public ServiceProductsImpl(){
+		daoProd = new DaoProductsImpl();
+	}
+	
+	@Override
+	public ArrayList<Products> getproductList throws ProductsException {
+		return daoProd.get
+	}
+}

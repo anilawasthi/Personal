@@ -1,0 +1,7 @@
+package com.jp.hr.interfaces;
+
+import java.util.ArrayList;
+
+public interface DaoEmployee {
+	public ArrayList<Employee> getEmpList() throws HrException;
+}

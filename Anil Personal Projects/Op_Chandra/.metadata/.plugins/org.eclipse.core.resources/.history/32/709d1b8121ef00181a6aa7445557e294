@@ -1,0 +1,44 @@
+package com.jp;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.jasper.tagplugins.jstl.core.Out;
+
+import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
+
+
+public class DBTablesServlet extends HttpServlet {
+	try {
+		Class.forName("oracle.jdbc.OracleDriver");
+		Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521/ORCL","hr","hr");
+		DatabaseMetaData dmd = conn.getMetaData();
+		ResultSet res = dmd.getTables(null, "HR", null, null);
+		
+		ArrayList<Integer> tables = new ArrayList<>();
+		while(res.next())
+		{
+			tables.add(res.getInt(3));
+		}
+		for (int i=0; i<tables.size(); i++);
+		{
+			Out.println("<A href='DBTableOutputServlet'? tablename="+ tables.get(i));
+		}
+	}
+	catch (ClassNotFoundException | SQLException e) {
+		e.printStackTrace();
+	}
+}
+}
+	

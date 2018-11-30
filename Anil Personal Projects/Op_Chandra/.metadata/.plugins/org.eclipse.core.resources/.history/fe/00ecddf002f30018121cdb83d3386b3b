@@ -1,0 +1,14 @@
+package com.jp.products.services;
+
+import java.util.ArrayList;
+
+import com.jp.products.entities.Products;
+import com.jp.products.exceptions.ProductsException;
+
+public interface ServiceProducts {
+
+	public ArrayList<Products> getproductList() throws ProductsException;
+	public Products getProdDetails (int prodId) throws ProductsException;
+	public boolean addNewProduct (Products prod) throws ProductsException;
+
+}

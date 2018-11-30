@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;DaoEmployee.java&apos; to &apos;JPM_050_Layer_dao-service/src/com.jp.hr.daos&apos;&#x0D;&#x0A;- Original project: &apos;JPM_050_Layer_dao-service&apos;&#x0D;&#x0A;- Destination element: &apos;JPM_050_Layer_dao-service/src/com.jp.hr.daos&apos;&#x0D;&#x0A;- Original element: &apos;com.jp.hr.interfaces.DaoEmployee.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src&lt;com.jp.hr.daos" element1="/src&lt;com.jp.hr.interfaces{DaoEmployee.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1543308263013" units="1" version="1.0"/>
+</session>

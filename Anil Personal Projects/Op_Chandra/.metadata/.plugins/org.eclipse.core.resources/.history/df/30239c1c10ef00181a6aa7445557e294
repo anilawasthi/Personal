@@ -1,0 +1,47 @@
+package com.jp;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.*;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		doPost(request, response);
+	}
+	
+	public static Connection getConnection()throws ClassNotFoundException, SQLException{
+
+        Class.forName("oracle.jdbc.OracleDriver");
+            System.out.println("JDBC Driver found and Loaded!");
+
+        //Step 2: Create a connection
+        Connection    con = DriverManager.getConnection(
+                    "jdbc:oracle:thin:@localhost:1521/xe","hr","hr");
+            System.out.println("Connected to DB");
+    return con;
+    }
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String userName = request.getParameter("txtName");
+		String password = request.getParameter("txtPassword");
+		
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		
+		if (userName.equals("Admin") && password.equals("Password")){
+			out.write("Valid User");
+		}
+		else {
+			out.write("Invalid User");
+		}
+		
+	}
+
+}

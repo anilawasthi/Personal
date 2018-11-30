@@ -1,0 +1,7 @@
+<h1>J P Morgan Chase</h1>
+<br/>
+<%
+//Its a scriptlet where i can write any block of java code
+	String str = null;
+	str.concat("aaa");
+%>

@@ -1,0 +1,5 @@
+package com.jp.products.exceptions;
+
+public class UserException {
+
+}
