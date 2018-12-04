@@ -1,0 +1,15 @@
+Steps to Setup/Create JPA project:
+1. Switch to Open perspective in Eclipse
+2. Click File-> New -> Java Project
+3. Create EMP_MASTER Table using Data Source Explorer using the below query
+	CREATE TABLE emp_master(employeeId number PRIMARY KEY,
+	name VARCHAR2(30), salary NUMBER);
+4. Create sequence using the below query
+	CREATE SEQUENCE emp_master_seq;
+5. Insert data into the table using the below query
+	INSERT INTO emp_master VALUES(emp_master_seq.nextval,'Zara',9999);
+6. View if the data was entered correctly by using the below query
+	SELECT * FROM emp_master;
+7. Copy the lib JARS to the JRE System folder in Eclipse in project explorer view 
+	then select all	the JARS and right hover over Build Path option and select Add to Build Path option
+	and the libraries will get added to the project
