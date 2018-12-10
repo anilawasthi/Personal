@@ -1,0 +1,22 @@
+package com.java;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component("service")
+public class MyApplServices {
+	private MyApplDao dao;
+
+	public MyApplServices() {
+		// This code owns a responsibility of creating an object and holding a reference.
+		//dao = new MyApplDao();
+		System.out.println("Object of class MyApplServicres() is created.");
+	}
+	
+	//Dependency injection using Constructor
+	@Autowired   //It is also called as Autowiring/Plumbing by type.
+	public MyApplServices(MyApplDao dao) {
+		this.dao = dao;
+		System.out.println("Object of class MyApplServicres(dao) is created.");
+	}
+}

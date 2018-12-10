@@ -1,0 +1,34 @@
+package com.java;
+
+// Factory Class.
+public class ObjectFactory {
+	private MyApplDao dao;
+	private MyApplServices service;
+	
+	public ObjectFactory(){
+		dao = new MyApplDao(); //If the class name changes then we will have to change the name on this line.
+		service = new MyApplServices(dao);
+	}
+	//Factory Method.
+	public MyApplDao getDao(){
+		return dao;
+	}
+	
+	public MyApplServices getService(){
+		return service;
+	}
+	
+	public Object getBean(String beanName) {
+		switch(beanName) {
+		case "dao":{
+			return dao;
+		}
+		case "service":{
+			return service;
+		}
+		default:{
+			return null;
+		}
+		}
+	}
+}

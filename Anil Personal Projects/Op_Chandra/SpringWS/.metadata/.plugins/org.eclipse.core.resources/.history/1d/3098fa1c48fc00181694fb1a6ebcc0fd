@@ -1,0 +1,30 @@
+package com.java;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+/*
+ * 1. Creation of an application context.
+ * 2. The ClassPathXmlApplicationContext refers to config file which is relative to a path on ClassPath.
+ * 3. Beans are being created eagerly.
+ * 4. Beans are being created as Singleton.
+ */
+
+public class TestSpringFactory {
+
+	public static void main(String[] args) {
+		// Create a Spring Context
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("com/java/context.xml");
+		
+		System.out.println("Context created.");
+		MyApplDao dao1 = (MyApplDao)ctx.getBean("dao");
+		System.out.println(dao1.hashCode());
+		
+		MyApplDao dao2 = (MyApplDao)ctx.getBean("dao");
+		System.out.println(dao2.hashCode());
+		
+		MyApplServices service = (MyApplServices)ctx.getBean("service");
+		System.out.println(service.hashCode());
+	}
+
+}
