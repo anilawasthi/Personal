@@ -1,0 +1,32 @@
+package com.jp.products.services;
+
+import java.util.ArrayList;
+
+import com.jp.products.daos.DaoProducts;
+import com.jp.products.daos.DaoProductsImpl;
+import com.jp.products.entities.Products;
+import com.jp.products.exceptions.ProductsException;
+
+public class ServiceProductsImpl implements ServiceProducts {
+
+	private DaoProducts daoProd;
+
+	public ServiceProductsImpl() throws ProductsException {
+		daoProd = new DaoProductsImpl();
+	}
+
+	@Override
+	public ArrayList<Products> getproductList() throws ProductsException {
+		return daoProd.getproductList();
+	}
+
+	@Override
+	public Products getProdDetails(int prodId) throws ProductsException {
+		return daoProd.getProductDetails(prodId);
+	}
+
+	@Override
+	public boolean addNewProduct(Products prod) throws ProductsException {
+		return daoProd.insertNewRecord(prod);
+	}
+}
