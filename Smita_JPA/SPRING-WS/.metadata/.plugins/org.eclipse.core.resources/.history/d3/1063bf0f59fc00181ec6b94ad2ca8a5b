@@ -1,0 +1,12 @@
+package com.jp.dao;
+
+import org.springframework.stereotype.Component;
+
+// Annotation and bean id is dao, as we have comment the dao tags
+@Component("dao")
+public class MyApplDao {
+		
+	public MyApplDao() {
+		System.out.println("Object of class MyApplDao() is created");
+	}
+}

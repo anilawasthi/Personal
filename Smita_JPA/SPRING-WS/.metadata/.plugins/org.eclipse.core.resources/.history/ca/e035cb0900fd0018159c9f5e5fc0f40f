@@ -1,0 +1,13 @@
+package com.jp.hr.tests;
+
+import javafx.application.Application;
+
+public class TestLifeCycle {
+
+	public static void main(String[] args) {
+		
+		ApplicationtionContext ctx = new ApplicationContext();
+
+	}
+
+}

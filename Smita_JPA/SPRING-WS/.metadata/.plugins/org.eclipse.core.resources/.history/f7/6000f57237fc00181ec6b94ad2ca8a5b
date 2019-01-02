@@ -1,0 +1,24 @@
+package com.main;
+
+import com.java.MyApplDao;
+import com.java.MyApplServices;
+import com.java.ObjectFactory;
+
+public class TestDependencyInjection {
+
+	public static void main(String[] args) {
+			
+		
+//		MyApplDao dao = new MyApplDao();
+//		MyApplServices services = new MyApplServices(dao);
+
+		// Object Factory concept
+		ObjectFactory factory = new ObjectFactory();
+		// Constructor Injection
+		MyApplDao dao = factory.getDao(); // getDao is the factory method here client doesn't know which class object it is actually creating.
+		MyApplServices services = factory.getService(); // getService is the factory method here client doesn't know which class object it is actually creating.
+
+
+	}
+
+}

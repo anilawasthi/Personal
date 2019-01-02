@@ -1,0 +1,7 @@
+package com.entity;
+
+public class CommonAttritubes {
+	private String companyName;
+	private String address;
+	private int niftyBank;
+}

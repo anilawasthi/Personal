@@ -1,0 +1,14 @@
+package com.main;
+
+import com.jp.services.MyApplServices;
+
+public class TestLawOfDemerits {
+
+	public static void main(String[] args) {
+		// This way we need, in Servlet, service layer created the Object of DAO. Here we have created object of services and the Constructor of MyApplServices is called.
+		// Now in the MyApplServices we have creating the object of MyApplDap by calling the constructor
+		MyApplServices services = new MyApplServices();
+
+	}
+
+}

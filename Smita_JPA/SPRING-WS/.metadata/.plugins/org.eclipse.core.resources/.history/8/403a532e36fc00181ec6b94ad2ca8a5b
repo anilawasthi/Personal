@@ -1,0 +1,11 @@
+package com.java;
+
+// Factory Class
+public class ObjectFactory {
+	
+	// Factory Method
+	public MyApplDao getDao() {
+		return new MyApplDao();
+	}
+
+}

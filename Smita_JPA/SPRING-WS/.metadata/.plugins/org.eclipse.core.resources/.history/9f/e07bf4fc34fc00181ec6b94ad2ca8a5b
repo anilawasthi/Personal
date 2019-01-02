@@ -1,0 +1,14 @@
+package com.main;
+
+import com.java.MyApplDao;
+import com.java.MyApplServices;
+
+public class TestDependencyInjection {
+
+	public static void main(String[] args) {
+		MyApplDao dao = new MyApplDao();
+		MyApplServices services = new MyApplServices();
+
+	}
+
+}

@@ -1,0 +1,30 @@
+package com.jp.hr.daos;
+
+import java.util.ArrayList;
+
+import com.jp.hr.entities.Employee;
+import com.jp.hr.exceptions.HrException;
+import com.jp.hr.interfaces.DaoEmployee;
+
+public class DaoEmployeeImplDS implements DaoEmployee {
+
+	@Override
+	public ArrayList<Employee> getEmpList() throws HrException {
+		
+		return null;
+	}
+
+	@Override
+	public Employee getEmpDetails(int empId) throws HrException {
+		
+		return null;
+	}
+
+	@Override
+	public boolean insertNewRecord(Employee emp) throws HrException {
+		
+		return false;
+	}
+	
+
+}

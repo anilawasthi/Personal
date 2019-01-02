@@ -1,0 +1,47 @@
+package com.jp.hr.beans;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.InitializingBean;
+
+/*
+ * 	The Implementation of InitializingBean interface 
+ 		* The name of implementing method cannot be customizable
+ 		* The exception being throw can not be changed.
+ 		* The initializing code cannot be grouped as per category in different methods.
+ 		* The interface tightly bound the code to Spring framework API. 			
+ */
+
+public class ServiceBean implements InitializingBean{
+
+	private int x;
+	
+	public ServiceBean(int x) {
+		this.x = x;
+		System.out.println("In Constructor");
+	}	
+	
+	
+	public void setValueX(int x) {
+		this.x = x;
+		System.out.println("In Setter Method");
+	}
+	
+	
+	@PostConstruct
+	public void validateConfig() {
+		System.out.println("In VavalidateConfig");
+		if (x > 100) {
+			System.out.println("Wrong Input");
+		}
+	}
+
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("In afterPropertiesSet");
+		
+	}
+	
+	
+}

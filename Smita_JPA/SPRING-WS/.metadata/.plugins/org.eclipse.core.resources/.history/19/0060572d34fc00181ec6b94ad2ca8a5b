@@ -1,0 +1,11 @@
+package com.java;
+
+public class TestLawOfDemerits {
+
+	public static void main(String[] args) {
+		// This way we need, in Servlet, service layer created the Object of DAO.
+		MyApplServices services = new MyApplServices();
+
+	}
+
+}

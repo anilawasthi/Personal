@@ -1,0 +1,61 @@
+package com.main;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.jp.dao.MyApplDao;
+import com.jp.services.MyApplServices;
+import com.jp.entity.*;
+
+/*  1. Creation of an application context
+ * 	2. The ClassPathXmlApplicationContext refers to config file which is relative to a path on ClassPath.
+	3. Beans are being created eagerly by default.
+		 Note : To create object lazily, use "lazy-init" attribute iin configurations as true. 
+	4. Beans are being created as Singleton by default.
+		Note : To create Stateful objects use scope as 'prototype'. In services i have mentioned scope as prototype
+	5. Prototypes are always on demand. Nothing like eager creation.	
+	6. By Default, it calls Default Constructor. If does not exists in Entity class, throws exception. No default constructor found . It is Un-Checked Exception because it is not asking try catch to write.
+	7. In frameworks, why there is always Un-Checked EXceptions, as there is always an headache for developers for checked exception to write try catch.
+	
+*/	
+
+
+public class TestSpringFactory {
+
+	public static void main(String[] args) {
+		// Create a Spring Context		
+		ApplicationContext ctx = new ClassPathXmlApplicationContext ("context.xml");
+		
+		// Bean is created when the context is getting , as we see it is calling the constructor.
+		System.out.println("Context created.");
+		MyApplDao dao1 = (MyApplDao) ctx.getBean("dao");
+		System.out.println("dao1 : "+ dao1.hashCode());
+		
+		MyApplDao dao2 = (MyApplDao) ctx.getBean("dao");  // Spring object is not only creating object but also it is giving you SingleTon pattern as it is singleton is true
+		System.out.println("dao2 : "+ dao2.hashCode());
+		
+		
+		/* In this services i have make in context.xml as not singleton means prototype after running
+		 * you can see there is two object is created you can check by hashcode 
+		*/
+		MyApplServices service1 = (MyApplServices) ctx.getBean("service");
+		System.out.println("service1 : " +service1.hashCode());
+		
+		MyApplServices service2 = (MyApplServices) ctx.getBean("service");
+		System.out.println("service2 : " +service2.hashCode());
+		
+		// This is calling default constructor
+/*		CommonAttritubes common = (CommonAttritubes) ctx.getBean("commonData");
+		System.out.println("common : " +common);
+		*/
+		// This is calling  constructor
+		CommonAttritubes common1 = (CommonAttritubes) ctx.getBean("commonData1");
+		System.out.println("common1 : " +common1);
+		
+		
+		CommonAttritubes common1 = (CommonAttritubes) ctx.getBean("commonData1");
+		System.out.println("common1 : " +common1);
+		
+	}
+
+}

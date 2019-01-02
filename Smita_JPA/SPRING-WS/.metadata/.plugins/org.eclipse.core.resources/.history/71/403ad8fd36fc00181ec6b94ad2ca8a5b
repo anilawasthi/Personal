@@ -1,0 +1,23 @@
+package com.main;
+
+import com.java.MyApplDao;
+import com.java.MyApplServices;
+import com.java.ObjectFactory;
+
+public class TestDependencyInjection {
+
+	public static void main(String[] args) {
+			
+		
+//		MyApplDao dao = new MyApplDao();
+//		MyApplServices services = new MyApplServices(dao);
+
+		ObjectFactory factory = new ObjectFactory();
+		// Constructor Injection
+		MyApplDao dao = factory.getDao();
+		MyApplServices services = factory.getService();
+
+
+	}
+
+}

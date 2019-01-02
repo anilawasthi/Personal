@@ -1,0 +1,11 @@
+package com.java;
+
+public class MyApplServices {
+	private MyApplDao dao;
+	
+	
+	public MyApplServices() {
+		
+	}
+
+}

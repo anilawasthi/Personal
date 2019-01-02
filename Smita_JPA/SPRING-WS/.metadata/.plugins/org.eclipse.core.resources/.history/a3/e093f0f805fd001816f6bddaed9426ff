@@ -1,0 +1,66 @@
+package com.jp.hr.beans;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+/*
+ * 	The Implementation of InitializingBean interface 
+ 		* The name of implementing method cannot be customizable
+ 		* The exception being throw can not be changed.
+ 		* The initializing code cannot be grouped as per category in different methods.
+ 		* The interface tightly bound the code to Spring framework API. 			
+ */
+@Component("service")
+public class ServiceBean implements InitializingBean{
+
+	private int x;
+	
+	
+	public ServiceBean() {
+		super();
+		System.out.println("In No Parameter Constructor ");
+	}
+
+	@Autowired
+	public ServiceBean(@Value("10") int x) {
+		this.x = x;
+		System.out.println("In Constructor "  + x);
+	}	
+	
+	@Value("120")
+	public void setValueX(int x) {
+		this.x = x;
+		System.out.println("In Setter Method " + x);
+	}
+	
+	
+	@PostConstruct
+	public void validateConfig() {
+		System.out.println("In ValidateConfig");
+		if (x > 100) {
+			System.out.println("Wrong Input");
+		}
+	}
+
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+		System.out.println("In afterPropertiesSet");
+		
+	}
+	
+	
+
+	@Override
+	public String toString() {
+		return "ServiceBean [x=" + x + "]";
+	}
+
+
+	
+	
+}

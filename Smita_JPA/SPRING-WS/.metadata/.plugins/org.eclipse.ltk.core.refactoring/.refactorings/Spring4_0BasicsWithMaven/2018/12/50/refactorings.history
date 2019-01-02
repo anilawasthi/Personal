@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;context.xml&apos; to &apos;Spring000_DI-Factory/src/com.java&apos;&#x0D;&#x0A;- Original project: &apos;Spring4_0BasicsWithMaven&apos;&#x0D;&#x0A;- Destination element: &apos;Spring000_DI-Factory/src/com.java&apos;&#x0D;&#x0A;- Original element: &apos;context.xml&apos;" description="Copy file" destination="=Spring000_DI-Factory/src&lt;com.java" element1="src/main/java/pack_10_ioc/pack_10_beanBasics/pack01_beanFact/context.xml" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1544420312688" units="0" version="1.0"/>
+</session>

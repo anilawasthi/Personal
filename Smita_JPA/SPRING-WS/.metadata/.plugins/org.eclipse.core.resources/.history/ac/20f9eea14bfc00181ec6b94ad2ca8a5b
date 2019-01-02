@@ -1,0 +1,38 @@
+package com.jp.entity;
+
+public class CommonAttritubes {
+	private String companyName;
+	private String address;
+	private int niftyBank;
+	
+	
+	public CommonAttritubes(String companyName, String address, int niftyBank) {
+		super();
+		this.companyName = companyName;
+		this.address = address;
+		this.niftyBank = niftyBank;
+	}
+	
+	public CommonAttritubes(String companyName, int niftyBank) {
+		super();
+		this.companyName = companyName;		
+		this.niftyBank = niftyBank;
+	}
+
+
+	public CommonAttritubes() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+	@Override
+	public String toString() {
+		return "CommonAttritubes [companyName=" + companyName + ", address=" + address + ", niftyBank=" + niftyBank
+				+ "]";
+	}
+	
+	
+	
+}

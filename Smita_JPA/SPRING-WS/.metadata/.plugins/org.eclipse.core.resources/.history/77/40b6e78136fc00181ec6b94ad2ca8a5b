@@ -1,0 +1,23 @@
+package com.java;
+
+// Factory Class
+public class ObjectFactory {
+	private MyApplDao dao;
+	private MyApplServices service;
+	
+	// Constructor
+	public ObjectFactory() {
+		dao = new MyApplDao();
+		service = new MyApplServices(dao);
+	}
+	
+	// Factory Method
+	public MyApplDao getDao() {
+		return dao
+	}
+
+	public MyApplServices getService() {
+		return service;
+	}
+
+}
