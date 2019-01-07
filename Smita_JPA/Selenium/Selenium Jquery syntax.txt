@@ -1,0 +1,18 @@
+
+
+// Below example allows us to use JQUERY to locate elements on todays modern websites
+
+String script = "return jQuery('#some-id).get(0)";
+
+JavascriptExecutor executor = (JavascriptExecutor)driver;
+WebElement element = (WebElement)executor.executeScript();
+
+
+Gherkin/Cucumber format Keywords
+1. Feature
+2. Scenario
+3. GIVEN
+4. WHEN
+5. THEN
+	a. AND
+6. BUT
